@@ -2,9 +2,13 @@
 A mobile application allow you to talk with chatGPT.
 
 ## feature
+![Honeyview_1](https://github.com/twisger/chatgpt-talk/assets/12410710/f727153f-b801-4875-bad2-00c549435ddf)
+![Honeyview_2](https://github.com/twisger/chatgpt-talk/assets/12410710/bac44fea-7529-4a50-825c-1e80189a44b5)
+
 * Talk to chatGPT and listen from ChatGPT.
 * Translate text and play voice.
 * [Demo Video](https://www.youtube.com/watch?v=k4gDPMKoAI0)
+
 
 
 ## How to use
