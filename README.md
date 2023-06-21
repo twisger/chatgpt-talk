@@ -16,7 +16,7 @@ A mobile application allow you to talk with chatGPT.
 ### 0.Download and install APP
 https://github.com/twisger/chatgpt-talk/releases
 
-### 1.Apply and set OpenAI apikey(Required)
+### 1.Apply and set OpenAI apiKey(Required)
 [Open AI api key](https://platform.openai.com/account/api-keys)
 
 ### 2.Apply and set Microsoft TTS apiKey(Optional but required for play voice)
