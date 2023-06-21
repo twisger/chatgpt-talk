@@ -55,7 +55,7 @@ export const SettingScreen = () => {
         setMsPlaceholder('**********')
       }
     })
-  })
+  }, [])
   const handleOpenAISubmit = async (openAIApiKey: string) => {
     if (openAIApiKey.length === 0) {
       return
@@ -84,10 +84,12 @@ export const SettingScreen = () => {
     ToastAndroid.show('Microsoft API key configured', 1000)
   }
 
-  const handleRoleChange = (role: string) => {
-    setRole(role)
-    AsyncStorage.setItem(TTS_ROLE_KEY, role)
-    ToastAndroid.show('Microsoft Role configured', 500)
+  const handleRoleChange = (newRole: string) => {
+    if (role !== newRole) {
+      setRole(newRole)
+      AsyncStorage.setItem(TTS_ROLE_KEY, newRole)
+      ToastAndroid.show('Microsoft Role configured', 500)
+    }
   }
   return (
     <Container>
