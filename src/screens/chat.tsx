@@ -151,6 +151,10 @@ export const Chat = () => {
 
     if (messageAudioPathCache.has(key)) {
       await stopPlayer()
+      if (text === textPlaying) {
+        setTextPlaying('')
+        return
+      }
       setTextPlaying(text)
 
       await startPlayer(messageAudioPathCache.get(key)).catch(
