@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { MICROSOFT_APIKEY_KEY, OPENAI_APIKEY_KEY } from '../utils/constants'
+import { ToastAndroid } from 'react-native'
 
 let openAIAPIKey = ''
 let microsoftAPIKey = ''
@@ -20,6 +21,7 @@ export const getOpenAIApiKey = () => {
   if (openAIAPIKey) {
     return openAIAPIKey
   } else {
+    ToastAndroid.show('You need to set Open AI APIkey', 1000)
     throw new Error('Failed to get Open AI APIkey')
   }
 }

@@ -1,4 +1,4 @@
-import axios from 'axios/index'
+import axios, { AxiosError } from 'axios/index'
 import { getMicrosoftApiKey, getOpenAIApiKey } from '../screens/apiKey'
 import RNFetchBlob from 'rn-fetch-blob'
 import { getTTSTemplate } from '../utils'
@@ -77,17 +77,24 @@ export type ChatGPTMessages = Array<{
   content: string
 }>
 export const createChatCompletion = (messages: ChatGPTMessages) => {
-  return axios.post(
-    'https://api.openai.com/v1/chat/completions',
-    {
-      model: 'gpt-3.5-turbo',
-      messages,
-    },
-    {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${getOpenAIApiKey()}`,
+  return axios
+    .post(
+      'https://api.openai.com/v1/chat/completions',
+      {
+        model: 'gpt-3.5-turbo',
+        messages,
       },
-    },
-  )
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${getOpenAIApiKey()}`,
+        },
+      },
+    )
+    .catch((e: AxiosError) => {
+      if (e.response?.status == 401) {
+        ToastAndroid.show('OpenAI API Key is invalid', 1000)
+      }
+      throw e
+    })
 }

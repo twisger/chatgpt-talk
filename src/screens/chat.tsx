@@ -85,8 +85,6 @@ export const Chat = () => {
     setLoadingStatus(LoadingStatus.Ready)
     console.error(`${text}`)
     throw e
-    // console.error(text + e + '\n')
-    // console.log(e)
   }
   const handleStop = async () => {
     const recordAudioPath = await stopRecorder()
