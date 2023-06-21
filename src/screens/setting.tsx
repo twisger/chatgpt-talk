@@ -9,6 +9,7 @@ import {
 } from '../utils/constants'
 import { Picker } from '@react-native-picker/picker'
 import { MICROSOFT_TTS_ROLES } from '../utils'
+import throttle from 'lodash.throttle'
 
 interface Props {
   label: string
@@ -84,13 +85,14 @@ export const SettingScreen = () => {
     ToastAndroid.show('Microsoft API key configured', 1000)
   }
 
-  const handleRoleChange = (newRole: string) => {
+  const handleRoleChange = throttle((newRole: string) => {
     if (role !== newRole) {
       setRole(newRole)
       AsyncStorage.setItem(TTS_ROLE_KEY, newRole)
       ToastAndroid.show('Microsoft Role configured', 500)
     }
-  }
+  }, 1000)
+
   return (
     <Container>
       <APIKeyInput
