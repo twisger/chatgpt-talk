@@ -1,5 +1,5 @@
 import axios, { AxiosError } from 'axios/index'
-import { getMicrosoftApiKey, getOpenAIApiKey } from '../screens/apiKey'
+import { getMicrosoftApiKey, getOpenAIApiKey } from '../utils/apiKey'
 import RNFetchBlob from 'rn-fetch-blob'
 import { getTTSTemplate } from '../utils'
 import { VOICE_FILE_NAME } from '../utils/constants'

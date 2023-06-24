@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { MICROSOFT_APIKEY_KEY, OPENAI_APIKEY_KEY } from '../utils/constants'
+import { MICROSOFT_APIKEY_KEY, OPENAI_APIKEY_KEY } from './constants'
 import { ToastAndroid } from 'react-native'
 
 let openAIAPIKey = ''

@@ -29,7 +29,7 @@ import {
   VOICE_RECORD_PATH,
 } from '../utils/constants'
 import { PlayBackType } from 'react-native-audio-recorder-player/index'
-import { preLoadAPIKey } from './apiKey'
+import { preLoadAPIKey } from '../utils/apiKey'
 import { PlaceHolder } from '../components/placeholder'
 import { useFocusEffect } from '@react-navigation/native'
 import { Mode, ModeContext } from '../utils/context'
